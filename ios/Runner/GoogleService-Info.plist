@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>736900960385-s1k4mb062u960bu1eltv0e285f127404.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.736900960385-s1k4mb062u960bu1eltv0e285f127404</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBcizICUn_BbkCRUGJoAOZNdnTKdQzBKuU</string>
+	<key>GCM_SENDER_ID</key>
+	<string>736900960385</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.iconicsApp</string>
+	<key>PROJECT_ID</key>
+	<string>flutter-iconics</string>
+	<key>STORAGE_BUCKET</key>
+	<string>flutter-iconics.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:736900960385:ios:1625e5f1e8c49e6d73fd80</string>
+	<key>DATABASE_URL</key>
+	<string>https://flutter-iconics-default-rtdb.asia-southeast1.firebasedatabase.app</string>
+</dict>
+</plist>
