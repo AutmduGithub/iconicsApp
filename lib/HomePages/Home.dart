@@ -32,7 +32,7 @@ const AndroidNotificationChannel channel = AndroidNotificationChannel(
 Future onDidReceiveLocalNotification(
     int id, String? title, String? body, String? payload) async {
   // display a dialog with the notification details, tap ok to go to another page
-  var context;
+  BuildContext context = BuildContext as BuildContext;
   showDialog(
     context: context,
     builder: (BuildContext context) => CupertinoAlertDialog(
@@ -48,6 +48,16 @@ Future onDidReceiveLocalNotification(
     ),
   );
 }
+
+const DarwinInitializationSettings initializationSettingsIOS =
+    DarwinInitializationSettings(
+  requestSoundPermission: false,
+  requestBadgePermission: false,
+  requestAlertPermission: false,
+  onDidReceiveLocalNotification: onDidReceiveLocalNotification,
+);
+const InitializationSettings initializationSettings =
+    InitializationSettings(iOS: initializationSettingsIOS, macOS: null);
 
 final FlutterLocalNotificationsPlugin plugin =
     FlutterLocalNotificationsPlugin();
@@ -112,7 +122,7 @@ class _MyHomePageState extends State<MyHomePage> {
       debugShowCheckedModeBanner: false,
       home: const Home(),
       theme: ThemeData(
-        primarySwatch: Colors.deepPurple,
+        primarySwatch: Colors.grey,
       ),
       routes: {
         '/main': (context) => const MainActivity(),
@@ -176,6 +186,10 @@ class _HomeState extends State<Home> {
   }
 
   Future pluginInit() async {
+    await plugin.initialize(initializationSettings,
+        onDidReceiveNotificationResponse: (payload) async {
+      Navigator.pushNamed(context, payload.payload!);
+    });
     await plugin
         .resolvePlatformSpecificImplementation<
             AndroidFlutterLocalNotificationsPlugin>()
